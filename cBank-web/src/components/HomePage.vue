@@ -1,39 +1,42 @@
 <template>
-    <div style="text-align: center;background-color: #f1f1f3;height: 100%;padding: 0px;margin: 0px;">
-        <h1 style="font-size: 50px;">{{'是时候学习了！！！'+user.name}}</h1>
-        <el-descriptions  title="个人中心" :column="2" size="40" border>
+    <div class="homePage-class">
+        <el-descriptions  title="个人中心" :column="2" size="medium" border>
             <el-descriptions-item>
                 <template slot="label">
                     <i class="el-icon-s-custom"></i>
-                    账号
+                    <span> 账号</span>
                 </template>
-                {{user.no}}
+                <p>{{user.no}}</p>
             </el-descriptions-item>
             <el-descriptions-item>
                 <template slot="label">
                     <i class="el-icon-mobile-phone"></i>
-                    电话
+                    <span> 电话</span>
                 </template>
                 {{user.phone}}
             </el-descriptions-item>
             <el-descriptions-item>
                 <template slot="label">
                     <i class="el-icon-location-outline"></i>
-                    性别
+                    <span> 性别</span>
                 </template>
                 <el-tag
                         :type="user.sex === '1' ? 'primary' : 'danger'"
-                        disable-transitions><i :class="user.sex==1?'el-icon-male':'el-icon-female'"></i>{{user.sex==1?"男":"女"}}</el-tag>
+                        disable-transitions>
+                  <i :class="user.sex === 1 ? 'el-icon-male' : 'el-icon-female'"></i>
+                  {{user.sex===1?"男":"女"}}
+                </el-tag>
             </el-descriptions-item>
             <el-descriptions-item>
                 <template slot="label">
                     <i class="el-icon-tickets"></i>
-                    角色
+                    <span> 角色</span>
                 </template>
                 <el-tag
                         type="success"
-                        disable-transitions>{{user.roleId==0?"超级管理员":(user.roleId==1?"管理员":"用户")}}</el-tag>
-
+                        disable-transitions>
+                  {{user.roleId === 0 ? "超级管理员" : (user.roleId === 1 ? "管理员" : "用户")}}
+                </el-tag>
             </el-descriptions-item>
         </el-descriptions>
 
@@ -47,7 +50,6 @@
         name: "HomePage",
         components: {DateUtils},
         data() {
-
             return {
                 user:{}
             }
@@ -73,4 +75,12 @@
         margin: 0 auto;
         text-align: center;
     }
+    .homePage-class{
+      text-align: center;
+      background-color: #f1f1f3;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
 </style>
