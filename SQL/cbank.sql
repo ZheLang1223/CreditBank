@@ -14,7 +14,7 @@ CREATE TABLE user
     gender      CHAR(1) COMMENT 'M表示男性，F表示女性',
     phone       VARCHAR(15),
     role        VARCHAR(50) COMMENT '用户身份，0超级管理员，1管理员，2用户',
-    date_joined DATETIME     NOT NULL,
+    joined_date DATETIME     NOT NULL,
     status      VARCHAR(50)
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE certification
 );
 
 -- 插入用户数据
-INSERT INTO `user` (nickname, username, password, real_name, email, age, gender, phone, role, date_joined, status)
+INSERT INTO `user` (nickname, username, password, real_name, email, age, gender, phone, role, joined_date, status)
 VALUES ('admin', 'admin', 'admin', 'WuKong', 'wukong@sun.com', 28, 'M', '1234567890', '0', '2024-09-01 10:00:00', 'active'),
        ('折浪1', 'zhelang1', 'zhelang1', '折浪', 'zhelang02@qq.com', 21, 'M', '9876543210', '1', '2024-09-01 11:00:00', 'active'),
        ('折浪2', 'zhelang2', 'zhelang2', '折浪', 'zhelang02@qq.com', 22, 'F', '9876543210', '2', '2024-09-01 11:00:00', 'active'),
