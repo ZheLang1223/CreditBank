@@ -1,12 +1,24 @@
 
 import VueRouter from 'vue-router';
+import bankIntroduction from "@/components/introduction/BankIntroduction.vue";
+import achievementManagement from "@/components/achievement/AchievementManage.vue";
 
 const routes = [
     {
-        path:'/',
-        name:'index',
-        component:()=>import('../views/Home.vue')
+        path:'/', name:'Home',
+        component:()=>import('../views/Home.vue'),
+        children:[
+            {
+                path:'/introduction', name: 'introduction',
+                component: bankIntroduction
+            },
+            {   // 菜单成果管理
+                path:'/achievementManagement', name: 'AchievementManagement',
+                component: achievementManagement
+            }
+        ]
     },
+
     // {
     //     path:'/Index',
     //     name:'IndexPage',
