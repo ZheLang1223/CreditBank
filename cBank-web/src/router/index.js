@@ -4,40 +4,40 @@ import VueRouter from 'vue-router';
 const routes = [
     {
         path:'/',
-        name:'LoginForm',
-        component:()=>import('../components/LoginForm')
+        name:'index',
+        component:()=>import('../views/Home.vue')
     },
-    {
-        path:'/Index',
-        name:'IndexPage',
-        component:()=>import('../components/IndexPage'),
-        children:[
-            {
-                path:'/Home',
-                name:'HomePage',
-                meta:{
-                    title:'首页'
-                },
-                component:()=>import('../components/HomePage')
-            },
-            /*{
-                path:'/Admin',
-                name:'admin',
-                meta:{
-                    title:'管理员管理'
-                },
-                component:()=>import('../components/admin/AdminManage.vue')
-            },
-            {
-                path:'/User',
-                name:'user',
-                meta:{
-                    title:'用户管理'
-                },
-                component:()=>import('../components/user/UserManage.vue')
-            },*/
-        ]
-    }
+    // {
+    //     path:'/Index',
+    //     name:'IndexPage',
+    //     component:()=>import('../components/IndexPage'),
+    //     children:[
+    //         {
+    //             path:'/Home',
+    //             name:'HomePage',
+    //             meta:{
+    //                 title:'首页'
+    //             },
+    //             component:()=>import('../components/HomePage')
+    //         },
+    //         /*{
+    //             path:'/Admin',
+    //             name:'admin',
+    //             meta:{
+    //                 title:'管理员管理'
+    //             },
+    //             component:()=>import('../components/admin/AdminManage.vue')
+    //         },
+    //         {
+    //             path:'/User',
+    //             name:'user',
+    //             meta:{
+    //                 title:'用户管理'
+    //             },
+    //             component:()=>import('../components/user/UserManage.vue')
+    //         },*/
+    //     ]
+    // }
 ]
 
 const router = new VueRouter({
