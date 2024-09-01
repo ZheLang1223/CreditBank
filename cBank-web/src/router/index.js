@@ -2,6 +2,7 @@
 import VueRouter from 'vue-router';
 import bankIntroduction from "@/components/introduction/BankIntroduction.vue";
 import achievementManagement from "@/components/achievement/AchievementManage.vue";
+import users from "@/components/user/Users.vue";
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
             }
         ]
     },
+    {   // 测试一下是否可以展示用户的数据
+        path: '/users', name: 'Users',
+        component: users
+    }
+
 
     // {
     //     path:'/Index',

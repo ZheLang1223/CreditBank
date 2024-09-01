@@ -7,6 +7,7 @@
 <template>
   <div class="common-layout">
     <el-container>
+      <!-- 顶部导航栏 -->
       <el-header>
         <el-row type="flex" justify="space-between" align="middle">
           <el-col :span="1"></el-col>
@@ -32,7 +33,7 @@
       </el-header>
 
       <el-container>
-        <!-- 侧边栏菜单 -->
+        <!-- 侧边栏菜单：还没修改呢 -->
         <el-aside style="height: 100vh; width: 200px">
           <el-menu
               default-active="2"
@@ -58,9 +59,8 @@
             <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
           </el-menu>
         </el-aside>
-        <!-- 主要内容 -->
+        <!-- 页面主要内容 -->
         <el-main>
-          <!-- 介绍面板 -->
           <router-view/>
         </el-main>
       </el-container>

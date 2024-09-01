@@ -8,7 +8,7 @@ CREATE TABLE user
     nickname    VARCHAR(100) COMMENT '用户昵称，可以个性化设置',
     username    VARCHAR(100) NOT NULL UNIQUE COMMENT '用户账号，用于系统登录',
     password    VARCHAR(255) NOT NULL,
-    real_name   VARCHAR(255) COMMENT '用户的真实姓名',
+    realname   VARCHAR(255) COMMENT '用户的真实姓名',
     email       VARCHAR(255),
     age         INT(3),
     gender      CHAR(1) COMMENT 'M表示男性，F表示女性',
@@ -48,7 +48,7 @@ CREATE TABLE certification
 );
 
 -- 插入用户数据
-INSERT INTO `user` (nickname, username, password, real_name, email, age, gender, phone, role, joined_date, status)
+INSERT INTO `user` (nickname, username, password, realname, email, age, gender, phone, role, joined_date, status)
 VALUES ('admin', 'admin', 'admin', 'WuKong', 'wukong@sun.com', 28, 'M', '1234567890', '0', '2024-09-01 10:00:00', 'active'),
        ('折浪1', 'zhelang1', 'zhelang1', '折浪', 'zhelang02@qq.com', 21, 'M', '9876543210', '1', '2024-09-01 11:00:00', 'active'),
        ('折浪2', 'zhelang2', 'zhelang2', '折浪', 'zhelang02@qq.com', 22, 'F', '9876543210', '2', '2024-09-01 11:00:00', 'active'),

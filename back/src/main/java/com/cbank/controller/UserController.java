@@ -1,23 +1,27 @@
 package com.cbank.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.cbank.entity.User;
 import com.cbank.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 @CrossOrigin(origins = "http://localhost:8080") // Vue开发服务器地址
 public class UserController {
 
     @Autowired  // 自动注入实例
-    UserService userService;
+    private UserService userService;
+
+    public IPage<User> getUserPage(@RequestParam long current,
+                                   @RequestParam long size,
+                                   @RequestParam(required = false) String nameFilter){
+        return userService.getPageCC(current, size, nameFilter);
+    }
 
     /**
      * 获取用户列表
