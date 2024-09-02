@@ -1,9 +1,10 @@
 
 import VueRouter from 'vue-router';
 import bankIntroduction from "@/components/introduction/BankIntroduction.vue";
-import achievementManagement from "@/components/achievement/AchievementManage.vue";
-import users from "@/components/user/Users.vue";
 import userView from "@/views/UserView.vue";
+import achievementView from "@/views/AchievementView.vue";
+import certificationView from "@/views/CertificationView.vue";
+
 
 const routes = [
     {
@@ -14,22 +15,20 @@ const routes = [
                 path:'/introduction', name: 'introduction',
                 component: bankIntroduction
             },
-            {   // 菜单成果管理
-                path:'/achievementManagement', name: 'AchievementManagement',
-                component: achievementManagement
+            {   // 成果
+                path:'/achievement', name: 'achievement',
+                component: achievementView
             },
             {
-                path:'user', name: 'user',
+                path:'/user', name: 'user',
                 component: userView
+            },
+            {
+                path: '/certification', name: 'certification',
+                component: certificationView
             }
         ]
-    },
-    {   // 测试一下是否可以展示用户的数据
-        path: '/users', name: 'Users',
-        component: users
     }
-
-
     // {
     //     path:'/Index',
     //     name:'IndexPage',

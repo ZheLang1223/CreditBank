@@ -18,7 +18,7 @@ public class User {
     private String nickname;
     private String username;
     private String password;
-    private String real_name;
+    private String realname;
     private String email;
     private Integer age;
     private Character gender;
@@ -26,6 +26,4 @@ public class User {
     private String role;    // 用户身份：0超级管理员，1管理员，2用户
     private LocalDateTime joinedDate;   // 用户创建时间
     private String status;
-
-
 }

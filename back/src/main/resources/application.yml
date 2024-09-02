@@ -14,5 +14,5 @@ mybatis-plus:
 
 Logging:
   level:
-    com.wms: debug
+    com.cbank: debug
 

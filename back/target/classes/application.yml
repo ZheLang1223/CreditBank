@@ -7,7 +7,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: mysql
+mybatis-plus:
+  # sql文件映射地址
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.cbank.entity
 
 Logging:
   level:
-    com.wms: debug
+    com.cbank: debug
+

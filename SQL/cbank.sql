@@ -8,7 +8,7 @@ CREATE TABLE user
     nickname    VARCHAR(100) COMMENT '用户昵称，可以个性化设置',
     username    VARCHAR(100) NOT NULL UNIQUE COMMENT '用户账号，用于系统登录',
     password    VARCHAR(255) NOT NULL,
-    realname   VARCHAR(255) COMMENT '用户的真实姓名',
+    realname    VARCHAR(255) COMMENT '用户的真实姓名',
     email       VARCHAR(255),
     age         INT(3),
     gender      CHAR(1) COMMENT 'M表示男性，F表示女性',
@@ -49,10 +49,14 @@ CREATE TABLE certification
 
 -- 插入用户数据
 INSERT INTO `user` (nickname, username, password, realname, email, age, gender, phone, role, joined_date, status)
-VALUES ('admin', 'admin', 'admin', 'WuKong', 'wukong@sun.com', 28, 'M', '1234567890', '0', '2024-09-01 10:00:00', 'active'),
-       ('折浪1', 'zhelang1', 'zhelang1', '折浪', 'zhelang02@qq.com', 21, 'M', '9876543210', '1', '2024-09-01 11:00:00', 'active'),
-       ('折浪2', 'zhelang2', 'zhelang2', '折浪', 'zhelang02@qq.com', 22, 'F', '9876543210', '2', '2024-09-01 11:00:00', 'active'),
-       ('折浪3', 'zhelang3', 'zhelang3', '折浪', 'zhelang02@qq.com', 23, 'M', '9876543210', '2', '2024-09-01 11:00:00', 'active');
+VALUES ('admin', 'admin', 'admin', 'WuKong', 'wukong@sun.com', 28, 'M', '1234567890', '0', '2024-09-01 10:00:00',
+        'active'),
+       ('折浪1', 'zhelang1', 'zhelang1', '折浪', 'zhelang02@qq.com', 21, 'M', '9876543210', '1', '2024-09-01 11:00:00',
+        'active'),
+       ('折浪2', 'zhelang2', 'zhelang2', '折浪', 'zhelang02@qq.com', 22, 'F', '9876543210', '2', '2024-09-01 11:00:00',
+        'active'),
+       ('折浪3', 'zhelang3', 'zhelang3', '折浪', 'zhelang02@qq.com', 23, 'M', '9876543210', '2', '2024-09-01 11:00:00',
+        'active');
 
 -- 插入成就数据
 INSERT INTO `achievement` (user_id, name, description, type, credits, created_date, level)
@@ -62,5 +66,6 @@ VALUES (1, '算法分析与设计', '讲算法的分析和设计的', '在线课
 -- 插入认证数据
 INSERT INTO `certification` (achievement_id, achievement_name, applicant_id, reviewer_id, application_date, review_date,
                              status, remark)
-VALUES (1, '算法分析与设计', 1, 2, '2024-09-02 09:00:00', '2024-09-03 15:00:00', '已通过', '申请人符合所有要求，认证通过。'),
+VALUES (1, '算法分析与设计', 1, 2, '2024-09-02 09:00:00', '2024-09-03 15:00:00', '已通过',
+        '申请人符合所有要求，认证通过。'),
        (2, '港珠澳大桥建设', 2, 1, '2024-09-04 12:00:00', NULL, '待审核', '等待审核。');

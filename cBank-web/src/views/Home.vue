@@ -8,49 +8,58 @@
   <div class="common-layout">
     <el-container>
       <!-- 顶部导航栏 -->
-      <el-header>
+      <el-header >
         <el-row type="flex" align="middle">
-          <el-col :span="1"></el-col>
-          <el-col :span="3">终身学习学分银行</el-col>
-          <el-col :span="18">
-            <el-menu :default-active="'1'" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-              <el-menu-item index="1" @click="navigateTo('/introduction')">
+          <!-- Logo和系统名称 -->
+          <el-col :span="4" class="logo-section" style="display: flex; align-items: center;">
+            <img src="../assets/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;"/>
+            <span style="font-size: 20px; font-weight: bold;">终身学习学分银行</span>
+          </el-col>
+
+          <!-- 导航菜单 -->
+          <el-col :span="16">
+            <el-menu :default-active="'1'" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+                     style="justify-content: center;">
+              <el-menu-item index="1" @click="navigateTo('/introduction')" style="margin-right: 20px;">
                 <i class="el-icon-apple"></i>
                 <span slot="title">首页</span>
               </el-menu-item>
-              <el-menu-item index="2" @click="navigateTo('/achievementManagement')">
+              <el-menu-item index="2" @click="navigateTo('/achievement')" style="margin-right: 20px;">
                 <i class="el-icon-menu"></i>
                 <span slot="title">成果管理</span>
               </el-menu-item>
-              <el-menu-item index="3">
+              <el-menu-item index="3" @click="navigateTo('/certification')" style="margin-right: 20px;">
                 <i class="el-icon-menu"></i>
-                <span slot="title">成果认证（未完成）</span>
+                <span slot="title">成果认证</span>
               </el-menu-item>
-              <el-menu-item index="4" @click="navigateTo('/user')">
+              <el-menu-item index="4" @click="navigateTo('/user')" style="margin-right: 20px;">
                 <i class="el-icon-menu"></i>
                 <span slot="title">用户管理</span>
               </el-menu-item>
             </el-menu>
           </el-col>
-          <el-col :span="2">个人中心</el-col>
+
+          <!-- 个人中心 -->
+          <el-col :span="4" class="personal-center" style="text-align: right;">
+            <el-dropdown>
+          <span class="el-dropdown-link" style="cursor: pointer;">
+            <i class="el-icon-user"></i>
+            <span style="margin-left: 5px;">个人中心</span>
+          </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item @click.native="navigateTo('/userInfo')">个人信息</el-dropdown-item>
+                <el-dropdown-item>退出登录</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </el-col>
         </el-row>
       </el-header>
 
       <el-container>
-        <!-- 侧边栏菜单：还没修改呢 -->
-        <el-aside style="height: 100vh; width: 200px">
-          <el-menu
-              default-active="2"
-              class="el-menu-vertical-demo"
-              style="height: 100vh"
-              @open="handleOpen"
-              @close="handleClose"
-              active-text-color="#ffd04b">
-            <el-menu-item index="1">处理中心</el-menu-item>
-            <el-menu-item index="3" disabled>消息中心</el-menu-item>
-            <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-          </el-menu>
-        </el-aside>
+        <!-- 侧边栏菜单 -->
+<!--        <el-aside style="height: 100vh; width: 200px">-->
+<!--          -->
+<!--        </el-aside>-->
         <!-- 页面主要内容 -->
         <el-main>
           <router-view/>
@@ -64,29 +73,26 @@
 <script>
 export default {
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    navigateTo(path) {
+      this.$router.push(path);
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-    },
-    navigateTo(path) {
-      this.$router.push(path);  // 跳转到指定路径
-    },
-    data () {
-      return {
-        activeIndex: '1'
-      }
     }
   }
 }
-
-
 </script>
 
 <style scoped>
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.el-menu-demo {
+  background-color: transparent;
+  color: #fff;
+}
+
 
 </style>

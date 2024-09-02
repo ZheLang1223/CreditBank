@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="wms1@localhost" uuid="1394e79a-2cc8-4665-bc0a-3526b23e854e">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <remarks>This database is temporary.</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/wms1</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
     <data-source source="LOCAL" name="cBank@localhost" uuid="1203979f-e4ef-4c2b-aede-be1baa51ff58">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>

@@ -31,6 +31,11 @@
         select * from user
     </select>
 
+    <!-- 根据用户真实姓名查找用户 -->
+    <select id="getUserByRealname" resultType="com.cbank.entity.User">
+        select * from user where realname=#{realname}
+    </select>
+
     <select id="pageC" resultType="com.cbank.entity.User">
         select * from user
     </select>

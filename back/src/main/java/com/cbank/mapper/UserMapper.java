@@ -3,6 +3,7 @@ package com.cbank.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
+import com.cbank.entity.Achievement;
 import com.cbank.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -35,5 +36,8 @@ public interface UserMapper extends BaseMapper<User> {
      * @return 当前分页查询结果
      */
     IPage<User> pageCC(IPage<User> page, @Param(Constants.WRAPPER) Wrapper wrapper);
+
+    List<User> getUserByRealname(@Param("realname") String realname);
+
 
 }
