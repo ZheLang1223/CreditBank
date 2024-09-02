@@ -4,9 +4,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.cbank.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.mapstruct.Mapper;
 
 import java.sql.Wrapper;
 import java.util.List;
@@ -18,8 +17,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
-    @Select("select * from user")
-    public List<User> getAllUser();
+    List<User> getUserList();
 
     /**
      * 基于分页信息查询用户数据

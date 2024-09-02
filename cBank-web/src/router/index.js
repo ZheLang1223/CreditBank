@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import bankIntroduction from "@/components/introduction/BankIntroduction.vue";
 import achievementManagement from "@/components/achievement/AchievementManage.vue";
 import users from "@/components/user/Users.vue";
+import userView from "@/views/UserView.vue";
 
 const routes = [
     {
@@ -16,6 +17,10 @@ const routes = [
             {   // 菜单成果管理
                 path:'/achievementManagement', name: 'AchievementManagement',
                 component: achievementManagement
+            },
+            {
+                path:'user', name: 'user',
+                component: userView
             }
         ]
     },

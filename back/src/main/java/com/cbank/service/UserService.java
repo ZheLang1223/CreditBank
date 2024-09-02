@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUser();
+    List<User> getUserList();
 
     public IPage<User> getPageC(long current, long size);
     public IPage<User> getPageCC(long current, long size, String nameFilter);

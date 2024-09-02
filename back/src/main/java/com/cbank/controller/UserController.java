@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 @CrossOrigin(origins = "http://localhost:8080") // Vue开发服务器地址
 public class UserController {
 
@@ -27,8 +27,9 @@ public class UserController {
      * 获取用户列表
      * @return 用户列表
      */
-    @GetMapping("/getAll")
-    public List<User> getAll(){
-        return userService.getAllUser();
+    @GetMapping("/list")
+    public List<User> getUserList(){
+        return userService.getUserList();
     }
+
 }

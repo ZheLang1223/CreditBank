@@ -2,29 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cbank.mapper.UserMapper">
 
-    <!-- resultMap标签：映射select查询出来结果的集合，
-        其主要作用是将实体类中的字段与数据库表中的字段进行关联映射。 -->
-    <resultMap id="BaseResultMap" type="com.cbank.entity.User">
-        <id column="id" property="id" />
-        <result column="nickname" property="nickname" />
-        <result column="username" property="username" />
-        <result column="password" property="password" />
-        <result column="realname" property="realname" />
-        <result column="email" property="email" />
-        <result column="age" property="age" />
-        <result column="gender" property="gender" />
-        <result column="phone" property="phone" />
-        <result column="role" property="role" />
-        <result column="joined_date" property="joined_date" />
-        <result column="status" property="status" />
-    </resultMap>
+<!--    &lt;!&ndash; resultMap标签：映射select查询出来结果的集合，-->
+<!--        其主要作用是将实体类中的字段与数据库表中的字段进行关联映射。 &ndash;&gt;-->
+<!--    <resultMap id="BaseResultMap" type="com.cbank.entity.User">-->
+<!--        <id column="id" property="id" />-->
+<!--        <result column="nickname" property="nickname" />-->
+<!--        <result column="username" property="username" />-->
+<!--        <result column="password" property="password" />-->
+<!--        <result column="realname" property="realname" />-->
+<!--        <result column="email" property="email" />-->
+<!--        <result column="age" property="age" />-->
+<!--        <result column="gender" property="gender" />-->
+<!--        <result column="phone" property="phone" />-->
+<!--        <result column="role" property="role" />-->
+<!--        <result column="joined_date" property="joined_date" />-->
+<!--        <result column="status" property="status" />-->
+<!--    </resultMap>-->
 
-    <!-- sql标签定义了SQL语句和Java接口（mapper接口）的方法之间的映射关系
-        当在代码中调用id对应的同名方法时，Mybatis会自动执行mapper.xml中定义的SQL语句
-        也就是sql标签中定义的SQL语句 -->
-    <sql id="Base_Column_List">
-        id, nickname, username, password, realname，email，age, gender, phone, role, joined_date, status
-    </sql>
+<!--    &lt;!&ndash; sql标签定义了SQL语句和Java接口（mapper接口）的方法之间的映射关系-->
+<!--        当在代码中调用id对应的同名方法时，Mybatis会自动执行mapper.xml中定义的SQL语句-->
+<!--        也就是sql标签中定义的SQL语句 &ndash;&gt;-->
+<!--    <sql id="Base_Column_List">-->
+<!--        id, nickname, username, password, realname，email，age, gender, phone, role, joined_date, status-->
+<!--    </sql>-->
+
+    <!-- 查询用户列表 -->
+    <select id="getUserList" resultType="com.cbank.entity.User">
+        select * from user
+    </select>
 
     <select id="pageC" resultType="com.cbank.entity.User">
         select * from user
