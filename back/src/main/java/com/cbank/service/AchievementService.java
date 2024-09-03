@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface AchievementService {
     List<Achievement> list();
+
+    List<Achievement> searchByName(String name);
 }

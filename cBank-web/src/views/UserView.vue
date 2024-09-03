@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-input v-model="name" placeholder="输入关键词" @change="search" style="width: 180px; margin-right: 10px"></el-input>
-    <el-button type="primary" @click="search">搜索</el-button>
+    <el-input v-model="searchQuery" placeholder="输入关键词" style="width: 180px; margin-right: 10px"></el-input>
+    <el-button type="primary" @click="searchUsers">搜索</el-button>
     <el-button type="primary" @click="add">添加用户</el-button>
 
     <!-- 用户信息表格 -->
@@ -52,13 +52,12 @@ export default {
       console.log(`当前页: ${val}`);
     },
     // 发送请求访问后端查询用户信息
-    search() {
-      console.log("点击搜索");
-      console.log(this.name);
-      let params={
-        realname:this.name
-      }
-      request.get('/user/search',{params}).then(res=>{
+    searchUsers() {
+      request.get('/user/search',{
+        params:{
+          name:this.searchQuery,
+        }
+      }).then(res=>{
         if(res && res.data){
           this.tableData = res.data;  // 返回的数据是用户列表
         }
@@ -73,7 +72,7 @@ export default {
   data() {
     return {
       input:'',
-      name:"",
+      searchQuery:'',
       tableData: [],
       currentPage1: 5,
       currentPage2: 5,

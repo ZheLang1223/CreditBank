@@ -29,7 +29,7 @@ export default {
   methods: {
     searchAchievements() {
       // 发送请求到后端，根据查询条件搜索成就记录
-      request.get('/achievement/list', {
+      request.get('/achievement/search', {
         params: {
           name: this.searchQuery // 将查询条件作为参数发送到后端
         }

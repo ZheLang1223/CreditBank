@@ -11,4 +11,6 @@ import java.util.List;
 
 public interface CertificationService {
     List<Certification> list();
+
+    List<Certification> searchByAchievementName(String achievementName);
 }

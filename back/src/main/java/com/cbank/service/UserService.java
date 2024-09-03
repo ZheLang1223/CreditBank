@@ -14,7 +14,8 @@ public interface UserService {
 //    IPage<User> getPageC(long current, long size);
 //    IPage<User> getPageCC(long current, long size, String nameFilter);
 
-    List<User> getUserByRealname(String realname);
 
     int addUser(User user);
+
+    List<User> searchByName(String name);
 }

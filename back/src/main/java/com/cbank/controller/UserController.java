@@ -35,13 +35,14 @@ public class UserController {
     }
 
     /**
-     * 根据用户真实姓名查找用户
-     * @param realname 用户的真实姓名
-     * @return 查询结果
+     * 根据用户昵称、账号、真实姓名模糊查询用户
+     *
+     * @param name 用户昵称、账号、真实姓名
+     * @return 用户记录
      */
     @GetMapping("/search")
-    public Result getUserByRealname(String realname){
-        List<User> list = userService.getUserByRealname(realname);
+    public Result searchByName(String name){
+        List<User> list = userService.searchByName(name);
         return Result.success(list);
     }
 

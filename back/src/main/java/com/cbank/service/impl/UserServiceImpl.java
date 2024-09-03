@@ -1,5 +1,6 @@
 package com.cbank.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -34,9 +35,10 @@ public class UserServiceImpl implements UserService {
 //        return userMapper.selectPage(page, queryWrapper);
 //    }
 
+
     @Override
-    public List<User> getUserByRealname(String realname) {
-        return userMapper.getUserByRealname(realname);
+    public List<User> getUserList() {
+        return userMapper.getUserList();
     }
 
     @Override
@@ -44,9 +46,20 @@ public class UserServiceImpl implements UserService {
         return userMapper.insert(user); // 返回受影响的行数
     }
 
+
+    /**
+     * 根据用户昵称、账号、真实姓名模糊查询用户
+     *
+     * @param name 用户昵称、账号、真实姓名
+     * @return 用户记录
+     */
     @Override
-    public List<User> getUserList() {
-        return userMapper.getUserList();
+    public List<User> searchByName(String name) {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.like(User::getNickname, name)
+                .or().like(User::getUsername, name)
+                .or().like(User::getRealname, name);
+        return userMapper.selectList(queryWrapper);
     }
 
 }
